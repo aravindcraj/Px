@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Px.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/karla_bold</item>
+        <item name="android:color">@color/textPrimary</item>
+        <item name="android:textSize">128sp</item>
+    </style>
+
+    <style name="TextAppearance.Px.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/karla_bold</item>
+        <item name="android:color">@color/textPrimary</item>
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <style name="TextAppearance.Px.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/karla_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="TextAppearance.Px.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:color">@color/textSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/karla_bold</item>
+        <item name="android:color">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/karla_bold_italic</item>
+        <item name="android:color">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:color">@color/textSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:color">@color/textSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:color">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:color">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Px.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/karla</item>
+        <item name="android:textColor">@color/colorBackground</item>
+    </style>
+
+    <style name="TextAppearance.Px.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/karla</item>
+    </style>
+
+    <style name="TextAppearance.Px.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/karla</item>
+    </style>
+</resources>
