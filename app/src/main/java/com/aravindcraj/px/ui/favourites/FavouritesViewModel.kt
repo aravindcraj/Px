@@ -1,13 +1,16 @@
 package com.aravindcraj.px.ui.favourites
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.paging.PagedList
+import com.aravindcraj.px.data.models.Photo
+import com.aravindcraj.px.data.repository.PxRepository
 
-class FavouritesViewModel : ViewModel() {
+class FavouritesViewModel(
+    private val pxRepository: PxRepository
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    fun getSavedPhotos(): LiveData<PagedList<Photo>> {
+        return pxRepository.getAllSavedPhotos()
     }
-    val text: LiveData<String> = _text
 }

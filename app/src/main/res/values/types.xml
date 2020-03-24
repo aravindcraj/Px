@@ -26,7 +26,7 @@
     </style>
 
     <style name="TextAppearance.Px.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="fontFamily">@font/karla_bold</item>
         <item name="android:color">@color/textPrimary</item>
     </style>
