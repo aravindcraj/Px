@@ -12,6 +12,7 @@ import androidx.paging.PagedList
 import com.aravindcraj.px.adapters.PhotoAdapter
 import com.aravindcraj.px.data.models.Photo
 import com.aravindcraj.px.databinding.FragmentExploreBinding
+import com.aravindcraj.px.utils.gone
 import com.aravindcraj.px.utils.hide
 import com.aravindcraj.px.utils.hideKeyboard
 import com.aravindcraj.px.utils.show
@@ -62,16 +63,15 @@ class ExploreFragment : Fragment() {
 
         binding.apply {
             search.setOnClickListener {
-                exploreViewModel.searchPhotos(
+                fetchPhotos(
                     query.text.toString().trim()
                 )
             }
         }
 
         binding.photosList.adapter = adapter
-        exploreViewModel.apply {
-            searchPhotos(searchQuery.value ?: DEFAULT_QUERY)
 
+        exploreViewModel.apply {
             photos.observe(viewLifecycleOwner, Observer<PagedList<Photo>> {
                 if (it?.size == 0 && !isLoading) {
                     noPhotosFound()
@@ -88,6 +88,8 @@ class ExploreFragment : Fragment() {
                 binding.query.setText(it)
             })
         }
+
+        startSearching()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -95,10 +97,6 @@ class ExploreFragment : Fragment() {
 
         exploreViewModel.state.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
-                is ExploreState.StartSearching -> {
-                    startSearching()
-                }
-
                 is ExploreState.ShowLoading -> {
                     showLoading(true)
                 }
@@ -112,27 +110,29 @@ class ExploreFragment : Fragment() {
 
     private fun fetchPhotos(query: String) {
         exploreViewModel.searchPhotos(query)
+        binding.startExploring.gone()
     }
 
     private fun startSearching() {
-
+        binding.startExploring.show()
+        showLoading(false)
     }
 
     private fun noPhotosFound() {
-
+        binding.noPhotosFound.show()
     }
 
     private fun showLoading(flag: Boolean) {
         if (flag) {
-            binding.isLoading.show()
-            binding.photosList.hide()
+            with(binding) {
+                isLoading.show()
+                photosList.hide()
+            }
         } else {
-            binding.isLoading.hide()
-            binding.photosList.show()
+            with(binding) {
+                isLoading.hide()
+                photosList.show()
+            }
         }
-    }
-
-    companion object {
-        private const val DEFAULT_QUERY = "nature"
     }
 }

@@ -21,9 +21,9 @@
         android:id="@+id/query"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/keyline_2"
+        android:layout_marginStart="@dimen/keyline_3"
         android:layout_marginTop="@dimen/keyline_2"
-        android:layout_marginEnd="@dimen/keyline_2"
+        android:layout_marginEnd="@dimen/keyline_3"
         android:hint="@string/search_for_anything"
         android:imeOptions="actionDone"
         android:inputType="text"
@@ -49,15 +49,91 @@
         app:layout_constraintTop_toTopOf="@+id/query"
         app:srcCompat="@drawable/ic_search_black_24dp" />
 
+    <LinearLayout
+        android:id="@+id/startExploring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/keyline_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/query">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:layout_marginBottom="@dimen/keyline_2"
+            android:contentDescription="@string/start_exploring"
+            android:src="@drawable/ic_start_exploring" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:text="@string/start_exploring"
+            android:textAppearance="?textAppearanceHeadline6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/please_type_what_you_want_to_search"
+            android:textAppearance="?textAppearanceHeadline4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/noPhotosFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/keyline_2"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/query">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:layout_marginBottom="@dimen/keyline_2"
+            android:contentDescription="@string/please_try_searching_something_else"
+            android:src="@drawable/ic_no_results_found" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:text="@string/no_photos_found"
+            android:textAppearance="?textAppearanceHeadline6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/please_try_searching_something_else"
+            android:textAppearance="?textAppearanceHeadline4" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photos_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="false"
-        app:layoutManager="LinearLayoutManager"
         android:paddingBottom="@dimen/keyline_6"
+        app:layoutManager="LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/query"
         tools:itemCount="10"
-        tools:listitem="@layout/adapter_explore_item" />
+        tools:listitem="@layout/adapter_explore_item"
+        tools:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

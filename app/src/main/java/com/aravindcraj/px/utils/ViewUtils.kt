@@ -13,6 +13,10 @@ fun View.hide() {
     visibility = View.INVISIBLE
 }
 
+fun View.gone() {
+    visibility = View.GONE
+}
+
 fun Fragment.hideKeyboard() {
     val windowToken = this.view?.rootView?.windowToken
     val imm = context?.getSystemService(
